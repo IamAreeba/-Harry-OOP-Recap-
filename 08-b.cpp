@@ -1,11 +1,6 @@
 #include <iostream>
 using namespace std; 
 
-/*
-Complex No is a 2D vector
-
-*/
-
 
 class Complex{
     int a;
