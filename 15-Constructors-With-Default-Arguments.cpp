@@ -16,6 +16,8 @@ class Simple{
         void printData();
 };
 
+void Simple :: printData(){
+    cout << "The value of Data is: " << Data1 << " , " << Data2 << " , " << Data3 << endl;
 }
 
 
