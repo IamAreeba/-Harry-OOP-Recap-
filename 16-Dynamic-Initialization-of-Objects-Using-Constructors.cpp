@@ -17,15 +17,16 @@ using namespace std;
         1 time and 100RS will be 104RS if interestValue = 0.04
         This Topic is: Compound And Simple Interest
 
-*/
+    We have to deine null constructor cuz if we dont make that and if we make any obj and not using that obj it will through error
 
+*/
 
 
 class BankDeposit{
     int principal;
     int years;
-    int interestRate;
-    int returnValue;
+    float interestRate;
+    float returnValue;
 
     public:
         BankDeposit(){}
@@ -40,12 +41,11 @@ BankDeposit :: BankDeposit(int p, int y, float r){
     principal = p;
     years = y;
     interestRate = r;
-
-    int returnValue = principal;
+    returnValue = principal;
 
     for (int i = 0; i < y; i++)
     {
-        returnValue = returnValue * (1+r);
+        returnValue = returnValue * ( 1 + interestRate );
     }
     
 }
@@ -55,12 +55,11 @@ BankDeposit :: BankDeposit(int p, int y, int r){
     principal = p;
     years = y;
     interestRate = (float)r/100;     
-
-    int returnValue = principal;
+    returnValue = principal;
 
     for (int i = 0; i < y; i++)
     {
-        returnValue = returnValue * (1+r);
+        returnValue = returnValue * ( 1 + interestRate );
     }
     
 }
@@ -79,11 +78,37 @@ int main(){
     float r;       // InterestRate in decimal form
     int R;         // InterestRate in % form
 
-    cout << "Enter the Value of p y r" << endl;
-    cin >> p >> y >> r;
+    cout << "Enter the Value of : " << endl;
+    cout << "p = ";
+    cin >> p ;
+    
+    cout << "y = ";
+    cin >> y ;
+
+    cout << "(Decimal) r = ";
+    cin >> r ;
+
+    cout << endl;
 
     BD1 = BankDeposit(p, y, r);
     BD1.show();
+
+    cout << "======================================================" << endl;
+
+    cout << "Enter the Value of : " << endl;
+    cout << "p = ";
+    cin >> p ;
+    
+    cout << "y = ";
+    cin >> y ;
+
+    cout << "(int / %) R = ";
+    cin >> R ;
+
+    cout << endl;
+
+    BD2 = BankDeposit(p, y, R);
+    BD2.show();
 
 
     cout << endl;
